@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+
+import Register from "./components/Register"
+import Login from "./components/Login"
+import ShowQRcode from "./components/ShowQRcode"
+import UploadId from "./components/UploadId"
+import ShowId from "./components/ShowId"
+import Admin from "./components/Admin"
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+      <Route path="/register" element={ <Register /> } />
+      <Route path="/login" element={ <Login /> } />
+      <Route path="/show_qr_code" element={ <ShowQRcode /> } />
+      <Route path="/upload_id" element={ <UploadId /> } />
+      <Route path="/show_id" element={ <ShowId /> } />
+      <Route path="/admin" element={ <Admin /> } />
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
