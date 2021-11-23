@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Un Proyecto motivado por Open Bootcamp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En el proyecto de esta semana, vamos a simular la validación de la identidad de un usuario. Es una parte útil para bancos o empresas similares, en las que se necesita que el usuario suba a la plataforma su Documento de Indentidad, antes de poder operar.
 
-## Available Scripts
+## Funciones de la app
 
-In the project directory, you can run:
+- Fase 1
 
-### `npm start`
+El usuario se registra, indicando nombre completo, correo electrónico y contraseña.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Fase 2
 
-### `npm test`
+Se muestra un onboarding al usuario, para que valide su identidad.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+- Fase 3 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Al pulsar en validar identidad, el usuario irá a una página en la que hay un código QR para que continúe el proceso desde el móvil.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Fase 4
 
-### `npm run eject`
+El usuario utiliza la cámara con el código QR y navega a una web responsive, en la que podrá adjuntar su documento de identidad por ambas partes.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Fase 5
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+El usuario visualiza en la web, desde su PC, ambas imágenes, subidas a través del móvil.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+- Fase 6
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+El usuario debe esperar hasta que se valide su cuenta, que se realizará por parte de la plataforma (usuario administrador).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+En el panel de administración en se verá el estado de la validación de cada usuario y se podrán visualizar los documentos y decidir si se valida o rechaza al usuario.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Gracias por leer!
