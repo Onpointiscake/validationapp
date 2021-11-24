@@ -1,7 +1,6 @@
 import './App.css';
-
 import Register from "./components/Register"
-import Login from "./components/Login"
+import Welcome from "./components/Welcome"
 import ShowQRcode from "./components/ShowQRcode"
 import UploadId from "./components/UploadId"
 import ShowId from "./components/ShowId"
@@ -14,8 +13,8 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Routes>
-      <Route path="/register" element={ <Register /> } />
-      <Route path="/login" element={ <Login /> } />
+      <Route path="/" element={ <Register /> } />
+      <Route path="/welcome/:userid" element={ <Welcome /> } />
       <Route path="/show_qr_code" element={ <ShowQRcode /> } />
       <Route path="/upload_id" element={ <UploadId /> } />
       <Route path="/show_id" element={ <ShowId /> } />
