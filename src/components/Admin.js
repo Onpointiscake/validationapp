@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {CloudinaryContext, Image} from "cloudinary-react"
-import { Button, Container, Header, Grid, Modal } from 'semantic-ui-react'
+import { Button, Divider, Container, Header, Grid, Menu } from 'semantic-ui-react'
 import './admin.css'
 
 export default function Admin() {
 
-    const [openModal, setOpenModal] = React.useState(false)
-
-    { /** TODO: 
-        [X] Hacer las media queries 
-        [ ] Meter un <p> O algo donde se vea el usuario
-        [ ] Diseñar el modal para que se renderize desde api segun cantidad de usuarios
-    */ }
+    const fakeData = [{id: 1, name: "Javierito", imagenes: ["https://www.comunidadredpill.com/wp-content/uploads/2018/01/daygame-700x392.png","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAmxK4ymrwjDnuk3K2YqaQM2JdBfnWpueuINrHgBGj0n5gbdHkafk8E1M6r_N9G4707dw&usqp=CAU"]},{id: 2, name: "Anacarto", imagenes: ["https://www.comunidadredpill.com/wp-content/uploads/2018/01/daygame-700x392.png","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAmxK4ymrwjDnuk3K2YqaQM2JdBfnWpueuINrHgBGj0n5gbdHkafk8E1M6r_N9G4707dw&usqp=CAU"]},{id: 3, name: "Davicito", imagenes: ["https://www.comunidadredpill.com/wp-content/uploads/2018/01/daygame-700x392.png","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAmxK4ymrwjDnuk3K2YqaQM2JdBfnWpueuINrHgBGj0n5gbdHkafk8E1M6r_N9G4707dw&usqp=CAU"]},{id: 4, name: "Sarita", imagenes: ["https://www.comunidadredpill.com/wp-content/uploads/2018/01/daygame-700x392.png","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAmxK4ymrwjDnuk3K2YqaQM2JdBfnWpueuINrHgBGj0n5gbdHkafk8E1M6r_N9G4707dw&usqp=CAU"]}]
 
     useEffect(() => {
         // Do api call - get here
@@ -24,48 +18,40 @@ export default function Admin() {
             <Header as='h1' dividing>
             Validation App - Admin 
             </Header>
-            {/** Tocar media queries en maxWidth del modal y en margins de las imagenes */}
+           
+            {fakeData.map((data, index) => {
+                return (
+                    <Grid style={{ marginTop: '0.2em' }} columns={3} stackable>
+
+                    <Grid.Column></Grid.Column>
+
+                    <Grid.Column>
+            <Menu vertical fluid>
+              <Menu.Item>
+                <Header size='medium' as='h1'>
+                 {data.name}
+                </Header>
+                <Grid.Row>
+      <Grid.Column>
+      
+        <Divider />
+        <Image style={{ marginRight: '1em' }} size='150px' src={data.imagenes[1]} />
+        <Image size='150px' src={data.imagenes[1]} />
+      </Grid.Column>
+      
           
-           
-            <Modal className="modal" 
-            onClose={() => setOpenModal(false)}
-            onOpen={() => setOpenModal(true)}
-            open={openModal}
-            trigger={<Button>Ver imágenes</Button>}
-            >
-            <Modal.Header>Comprobación de identidad</Modal.Header>
-            <Modal.Content >
-            <CloudinaryContext cloudName="validation-ob-proyect">
-                        <Container>
-                            <Grid centered>
-                                {/** Todo: Modificar tamaño imagen -- media queries */}
-                            <Grid.Row><a rel="noreferrer" target="_blank" href="https://google.es"><Image id="image" className="images-id" publicId="sample"  /></a>
-                           <a rel="noreferrer" target="_blank" href="https://google.es"><Image className="images-id" publicId="sample" /></a></Grid.Row>
-                        </Grid>
-                        </Container>
-                    </CloudinaryContext>
-                <Modal.Description>
-                <p>
-                    Hemos encontrado los siguientes IDs del usuario.
-                </p>
-                <p>¿Desea confirmar la identidad?</p>
-                </Modal.Description>
-            </Modal.Content>
-            <Modal.Actions>
-                <Button color='black' onClick={() => setOpenModal(false)}>
-                Rechazar
-                </Button>
-                <Button
-                content="Validar Identidad"
-                labelPosition='right'
-                icon='checkmark'
-                onClick={() => setOpenModal(false)}
-                positive
-                />
-            </Modal.Actions>
-            </Modal>
-           
-           
+    </Grid.Row>
+   
+              </Menu.Item>
+              <Button style={{ marginBottom: '0.8em' }}basic color='blue' >
+            Confirmar imágenes
+          </Button>
+            </Menu>
+          </Grid.Column>
+                <Grid.Column></Grid.Column>
+                </Grid>
+                )
+            })}
             </Container>
         </div>
     )
