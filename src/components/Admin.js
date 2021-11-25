@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import {CloudinaryContext, Image} from "cloudinary-react"
 import { Button, Container, Header, Grid, Modal } from 'semantic-ui-react'
+import './admin.css'
 
 export default function Admin() {
 
     const [openModal, setOpenModal] = React.useState(false)
+
+    { /** TODO: 
+        [X] Hacer las media queries 
+        [ ] Meter un <p> O algo donde se vea el usuario
+        [ ] Diseñar el modal para que se renderize desde api segun cantidad de usuarios
+    */ }
 
     useEffect(() => {
         // Do api call - get here
@@ -20,7 +27,7 @@ export default function Admin() {
             {/** Tocar media queries en maxWidth del modal y en margins de las imagenes */}
           
            
-            <Modal 
+            <Modal className="modal" 
             onClose={() => setOpenModal(false)}
             onOpen={() => setOpenModal(true)}
             open={openModal}
@@ -32,8 +39,8 @@ export default function Admin() {
                         <Container>
                             <Grid centered>
                                 {/** Todo: Modificar tamaño imagen -- media queries */}
-                            <Grid.Row><a rel="noreferrer" target="_blank" href="https://google.es"><Image publicId="sample" width="250" /></a>
-                           <a rel="noreferrer" target="_blank" href="https://google.es"><Image publicId="sample" width="250" /></a></Grid.Row>
+                            <Grid.Row><a rel="noreferrer" target="_blank" href="https://google.es"><Image id="image" className="images-id" publicId="sample"  /></a>
+                           <a rel="noreferrer" target="_blank" href="https://google.es"><Image className="images-id" publicId="sample" /></a></Grid.Row>
                         </Grid>
                         </Container>
                     </CloudinaryContext>
