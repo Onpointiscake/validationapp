@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-
+import { Button, Container, Header, Grid } from 'semantic-ui-react'
 import { FilePond, File, registerPlugin } from 'react-filepond'
 import 'filepond/dist/filepond.min.css'
 
@@ -9,18 +9,28 @@ export default function UploadId() {
 
     return (
         <div>
-            <p>Está página se verá desde el móvil. Aquí el usuario adjuntará su documento de identidad por ambas partes.</p>
-        
-            <FilePond
-        files={files}
-        onupdatefiles={setFiles}
-        allowMultiple={true}
-        maxFiles={2}
-        server="https://api.cloudinary.com/v1_1/validation-ob-project/upload"
-        name="files" 
-        labelIdle='Arrastra y suelta tus imágenes aquí o <span class="filepond--label-action">Busca en tus archivos</span>'
-      />
-     
+            <Container style={{ marginTop: '3em' }}>
+            <Header as='h1' dividing>
+            Validation App
+            </Header>
+
+            <Header as="h4">Adjunte ahora su documento por ambas partes.</Header>
+            <Grid columns={3} stackable>
+
+            <Grid.Column></Grid.Column>
+<Grid.Column><FilePond
+                files={files}
+                onupdatefiles={setFiles}
+                allowMultiple={true}
+                maxFiles={2}
+                server="https://api.cloudinary.com/v1_1/validation-ob-project/upload"
+                name="files" 
+                labelIdle='Arrastra y suelta tus imágenes aquí o <span class="filepond--label-action">Busca en tus archivos</span>'
+            /></Grid.Column>
+            <Grid.Column></Grid.Column>
+
+            </Grid>
+            </Container>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import QRCode from "qrcode"
 import React, { useEffect, useState } from "react"
+import { Container, Header, Image, Grid } from 'semantic-ui-react'
 
 export default function ShowQRcode() {
     const [src, setSrc] = useState("")
@@ -8,8 +9,16 @@ export default function ShowQRcode() {
 
     return (
         <div>
-            <p>Use su dispositivo móvil para escanear el siguiente código </p>
-            <img alt="qrcode" src={src} />
+            <Container style={{ marginTop: '3em' }}>
+
+            <Grid centered>
+
+            <Grid.Row><Header as="h3">Use su dispositivo móvil para escanear el siguiente código </Header></Grid.Row>
+            <Grid.Row><Image alt="qrcode" src={src} size="medium" /></Grid.Row>
+
+            </Grid>
+
+            </Container>
         </div>
     )
 }

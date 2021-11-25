@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { Button, Container, Header, Icon } from 'semantic-ui-react'
+import { Button, Container, Header, Grid } from 'semantic-ui-react'
 
 export default function Welcome() {
 
@@ -11,12 +11,31 @@ export default function Welcome() {
 
     return (
         <div>
-            <Container>
-            <Header as='h2'><Header.Content>Bievenido usuario</Header.Content></Header>
-             <Header as='h2'>
-                <Button onClick={handleClick} ><Header.Content>Comenzar Verificación</Header.Content></Button>
+            <Container style={{ marginTop: '3em' }}>
+   
+            <Header as='h1' dividing>
+            Validation App
             </Header>
-            </Container>
+
+       <Grid style={{ marginTop: '1em' }} columns={3} stackable>
+
+           <Grid.Column></Grid.Column>
+
+       <Grid.Column>
+           <Header as='h2'>Se ha registrado correctamente</Header>
+
+           <p>
+           Continue para validar su identidad en el sistema
+           </p>
+
+       <Button onClick={handleClick} color='green'>Siguiente</Button>
+              
+       
+       </Grid.Column>
+       <Grid.Column></Grid.Column>
+       </Grid>
+       </Container>
+ 
         </div>
     )
 }
