@@ -12,6 +12,7 @@ export default function Register() {
         navigate('/welcome/:userid')
     }
 
+    // Quitar apellido y poner en su lugar nombre de usuario
     return (
         <div>
             <Container style={{ marginTop: '3em' }}>

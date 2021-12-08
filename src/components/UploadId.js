@@ -6,7 +6,7 @@ import 'filepond/dist/filepond.min.css'
 export default function UploadId() {
 
     const [files, setFiles] = useState([])
-
+    // sustituir por filepond https://uploadcare.com/
     return (
         <div>
             <Container style={{ marginTop: '3em' }}>
